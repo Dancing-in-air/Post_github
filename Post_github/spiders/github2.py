@@ -9,7 +9,7 @@ class Github2Spider(scrapy.Spider):
     start_urls = ['https://github.com/login']
 
     def parse(self, response):
-        data = {"login": "Dancing-in-air", "password": "2567652983Cap"}
+        data = {"login": "Dancing-in-air", "password": ""}
         yield scrapy.FormRequest.from_response(response, formdata=data, callback=self.parse_page)
 
     def parse_page(self, response):
